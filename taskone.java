@@ -1,5 +1,6 @@
 package com;
 import java.util.*;
+/* this is a java */
 public class taskone {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
