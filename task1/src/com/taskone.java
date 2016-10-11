@@ -1,5 +1,6 @@
 
 package com;
+
 import java.util.*;
 public class taskone {
 	public static void main(String[] args) {
