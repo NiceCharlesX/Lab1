@@ -2,7 +2,9 @@
 package com;
 
 import java.util.*;
+
 public class taskone {
+	
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		String str = input.nextLine();
