@@ -4,8 +4,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        //String str = input.nextLine();
-        String str = "a+b";
+        String str = input.nextLine();
         Model a = new Model();
         a.setName(str);
         a.print();
