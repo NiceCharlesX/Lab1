@@ -14,16 +14,21 @@ public class Main {
             System.out.println("Error!");
         }
         else{
-            String sim = input.nextLine();
-            a.setSim(sim);
-            if (sim.contains("!simplify")){
-                a.simplify();
-            }
-            else if (sim.contains("!d/d")){
-                a.derivative();
-            }
-            else {
-                System.out.println("Error!");
+            while(input.hasNextLine())
+            {
+                String sim = input.nextLine();
+                a.setSim(sim);
+                if (sim.contains("!simplify")){
+                    a.simplify();
+                    System.out.println();
+                }
+                else if (sim.contains("!d/d")){
+                    a.derivative();
+                    System.out.println();
+                }
+                else {
+                    System.out.println("Error!");
+                }
             }
         }
     }
