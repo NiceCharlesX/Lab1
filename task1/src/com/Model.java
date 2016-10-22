@@ -55,7 +55,6 @@ class Model {
             }
             else if(name.charAt(i)>= 'a' && name.charAt(i)<= 'z'&& t){
                 while(i<name.length()&&name.charAt(i)>= 'a' && name.charAt(i)<= 'z'){
-                    s=s+name.charAt(i);
                     s = s.concat(name.substring(i, i + 1));
                     i++;
                 }
@@ -104,6 +103,7 @@ class Model {
             if (sim.charAt(i)==' '){
                 tf=true;
                 s="";
+                i++;
                 while(i<sim.length()&&sim.charAt(i)!='='){
                     s = s.concat(sim.substring(i, i+1));
                     i++;
@@ -120,8 +120,7 @@ class Model {
                 s="";
                 i++;
                 while(i<sim.length()&&sim.charAt(i)>= '0' && sim.charAt(i)<= '9'){
-                    s = s.concat(s.substring(i, i+1));
-                    s=s+sim.charAt(i);
+                    s = s.concat(sim.substring(i, i+1));
                     i++;
                 }
                 itemp[n]= Integer.parseInt(s);
