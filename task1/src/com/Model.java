@@ -29,7 +29,7 @@ class Model {
     public void print(){
         System.out.println(name);
     }
-    public  void expression(){
+    public  String  expression(){
         int i = 0;
         int j = 0;
         String s;
@@ -89,6 +89,12 @@ class Model {
             }
         }
         mylist.add(list);
+        if(flag){
+        	return "Right!";
+        }
+        else {
+        	return "Error!";
+        }
     }
 
     public void simplify(){
