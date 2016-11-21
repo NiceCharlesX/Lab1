@@ -5,6 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
+<<<<<<< HEAD
 @SuiteClasses({test1.class, test2.class, test3.class,
 	expressiontest1.class,
 	expressiontest2.class,
@@ -14,6 +15,9 @@ import org.junit.runners.Suite.SuiteClasses;
 	expressiontest5.class,
 	expressiontest6.class
 })
+=======
+@SuiteClasses({test1.class, test2.class, test3.class})
+>>>>>>> Lab1/master
 public class AllTests {
 
 }
