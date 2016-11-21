@@ -6,11 +6,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class Test5 {
+public class expressiontest6 {
 	Model a = new Model();
 	@Before
 	public void setUp() throws Exception {
-		a.setName("x^2.3");
+	a.setName("*x+y");
 	}
 
 	@After

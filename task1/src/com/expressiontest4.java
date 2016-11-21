@@ -6,11 +6,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class Test7 {
+public class expressiontest4 {
 	Model a = new Model();
 	@Before
 	public void setUp() throws Exception {
-		a.setName("x+y");
+	a.setName("x+^y");
 	}
 
 	@After
@@ -19,7 +19,7 @@ public class Test7 {
 
 	@Test
 	public void testExpression() {
-		assertEquals("Right!",a.expression());
+		assertEquals("Error!",a.expression());
 	}
 
 }

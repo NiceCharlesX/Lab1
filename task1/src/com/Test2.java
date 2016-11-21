@@ -6,20 +6,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class Test2 {
-	Model a = new Model();
-	@Before
-	public void setUp() throws Exception {
-		a.setName("x%y");
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
-	@Test
-	public void testExpression() {
-		assertEquals("Error!",a.expression());
-	}
+public class test2 {
+  @Test
+  public void test() {
+    Model t=new Model();
+    t.setName("x");
+    t.expression();
+    t.setSim("!d/dx");
+    assertEquals("1",t.derivative());
+  }
 
 }
