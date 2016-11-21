@@ -5,6 +5,8 @@ import java.util.ArrayList;
 /**
  * Created by Xiangxi on 2016/10/21.
  */
+
+//增加注释，测试Infinitest功能
 class Model {
     public void setName(String givenName) {
         this.name = givenName;
@@ -94,6 +96,7 @@ class Model {
         }
         else {
         	return "Error!";
+        	
         }
     }
 
@@ -191,72 +194,75 @@ class Model {
         return s;
     }
 
+	public boolean isnumber(char a)
+	{
+	    if('0'<=a && a<='9')
+	    {
+	       return true;
+	    }
+	    else
+	    {
+	       return false;
+	    }
+	}
+	
+	public String repeats(String a,int times)
+    {
+        String s="";
+        for(int i=0;i<times;i++)
+        {
+            s=s+a;
+        }
+        return s;
+    }
+	
     public void derivative(){
-        int i=2,n,sum;
-        String st="",s;
-        boolean io=false;
-
-        while(i< sim.length()){
-            if(sim.charAt(i-2)=='/' &&sim.charAt(i-1)=='d'){
-                io =true;
-            }
-            if(io){
-                st = st.concat(sim.substring(i, i+1));
-            }
-            i++;
-        }
-
-        sum=0;
-        s="";
-        for(ArrayList<String> list: mylist){
-            n=1;
-            if(list.contains(st)){
-                for(String point:list){
-                    if((point.charAt(0)=='+'||point.charAt(0)=='-')&&(s.length()!=0))
-                    {
-                        s=s+point;
-                    }
-                    else if(point.charAt(0)>='0'&&point.charAt(0)<= '9'){
-                        n= n*Integer.parseInt(point);
-                    }
-                    else{
-                        if(point.equals(st)){
-                            n=n*num[mylist.indexOf(list)][list.indexOf(point)];
-                            for(i=0;i<num[mylist.indexOf(list)][list.indexOf(point)]-1;i++){
-                                s = s.concat(point).concat("*");
-                            }
-                        }
-                        else{
-                            for(i=0;i<num[mylist.indexOf(list)][list.indexOf(point)];i++){
-                                s = s.concat(point).concat("*");
-                            }
-                        }
-                    }
-                }
-                if(s.length()==0||s.charAt(s.length()-1)=='+'){
-                    sum=sum+n;
-                    if(s.length()!=0)
-                    {
-                        s = s.substring(0,s.length()-1);
-                    }
-                }
-                else if(s.charAt(s.length()-1)=='-'){
-                    sum=sum-n;
-                    s = s.substring(0,s.length()-1);
-                }
-                else
-                {
-                    s=s+n;
-                }
-            }
-        }
-        System.out.print(s);
-        if(sum>0&&s.length()!=0){
-            System.out.print("+"+sum);
-        }
-        else if(sum!=0){
-            System.out.print(" "+sum);
-        }
+    	int n,sum;
+		String st="",s="";
+		st=sim.split("d")[2];
+		sum=0;
+		for(ArrayList<String> list: mylist){
+			n=1;
+			if(list.contains(st)){
+		        for(String point:list){
+				    if((point.charAt(0)=='+'||point.charAt(0)=='-')&&(s.length()!=0))
+				    {
+						s=s+point;
+				    }
+					else if(isnumber(point.charAt(0))){
+						n= n*Integer.parseInt(point);
+					}
+					else if(point.equals(st)){
+					    n=n*num[mylist.indexOf(list)][list.indexOf(point)];
+						s=s+repeats(point+"*",num[mylist.indexOf(list)][list.indexOf(point)]-1);
+				    }
+					else{
+					    s=s+repeats(point+"*",num[mylist.indexOf(list)][list.indexOf(point)]);
+					}
+				}
+		        if(s.length()==0||s.charAt(s.length()-1)=='+'){
+					sum=sum+n;
+					s = s.substring(0,Math.max(s.length()-1,0));
+				}
+				else if(s.charAt(s.length()-1)=='-'){
+					sum=sum-n;
+					s = s.substring(0,s.length()-1);
+				}
+				else
+				{
+					s=s+n;
+				}
+			}
+		}
+		System.out.print(s);
+		if(sum>0&&s.length()!=0){
+			System.out.print("+"+sum);
+		}
+		else if(sum==0){
+		}
+		else{
+			System.out.print(""+sum);
+		}
     }
 
     public void  trueorfalse(){

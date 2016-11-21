@@ -10,7 +10,7 @@ public class Test3 {
 	Model a = new Model();
 	@Before
 	public void setUp() throws Exception {
-		a.setName("x+");
+		a.setName("123");
 	}
 
 	@After
@@ -19,7 +19,9 @@ public class Test3 {
 
 	@Test
 	public void testExpression() {
-		assertEquals("Error!",a.expression());
+		assertEquals("Right!",a.expression());
 	}
+	
+	
 
 }
